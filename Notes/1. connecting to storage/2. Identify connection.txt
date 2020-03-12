@@ -1,0 +1,27 @@
+L2.2  Network Security
+一. Connection Types
+1.  public Endpoint - Internet Facing (firewall 去限制 ip address)
+2.  Service Endpoint - Virtual Network (VNet) Facing
+3.  Internal VNet Endpoint - Resource is inside the VNet
+
+二. 细节
+1.  public Endpoint - firewall 去限制 ip address, 让它不能被访问, 注意不要让它too open
+
+2.  Service Endpoint
+Azure service (protected by firewall) -> Virtual Netwrok with Service Endpoint <- Client
+注: 这些连接将完成在 internal Azure connections
+
+3.  Internal VNet Endpoint
+Azure service endpoints & Virtual Network 成为内部的一个整体的
+注: 所以只有内部的 VM 才能连接到它
+
+三. 总结用时
+1.  public - 确认client的ip 被添加到当中了
+2.  Service Endpoint - 
+(1) 确保 client 是被允许在这个 VNet里
+(2) 这个service 允许 VNet 
+
+3.  VNet Endpoint 
+(1) 确保 client 是被允许在这个 VNet里
+
+4.  确保 no local firewall 阻止你的access
