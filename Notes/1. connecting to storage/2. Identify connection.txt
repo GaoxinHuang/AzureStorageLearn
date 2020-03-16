@@ -25,3 +25,25 @@ Azure service endpoints & Virtual Network 成为内部的一个整体的
 (1) 确保 client 是被允许在这个 VNet里
 
 4.  确保 no local firewall 阻止你的access
+
+L2.3    Resource Names
+一. 默认和URL 和 端口
+app service: xxx.core.com
+Database: xxx.database.com:1433
+TCP(cache&redis): redis.cache.windows.net, port 6380
+
+L2.4    Authentication & Authorization
+一. Authentication
+1.  Azure Ad
+2.  SQL Database (username & password)
+
+二. Authorization
+1.  Token
+2.  Key
+
+L2.5 !!!    Demo: Gathering Information to Connect to Azure SQL Database
+一. SQL server   
+1.  找到正确的 server URL: sql server -> Properties -> server name
+2.  允许ip address: sql server -> overview -> Show firewall setting -> Add clinet Ip (自动添加当前的ip) 或手动添加
+3.  连接特定的database(无需): SQL Server Management Studio 登录界面 -> Connect Properties -> 可以选择连接的database
+4.  查看数据库: sql server -> overview -> 往下拉就能看到 SQL Database
